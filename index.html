@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Intake Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Additional Styles */
+        label[for="water_intake"], label[for="ro_installed"] {
+            color: #333;
+        }
+
+        select, input[type="radio"] + label, input[type="checkbox"] + label {
+            background-color: #f2f2f2;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] + label, input[type="checkbox"] + label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Water Intake Survey</h1>
+        <form action="submit_survey.php" method="post">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="education">Highest Education Level:</label>
+            <input type="radio" id="education_highschool" name="education" value="highschool">
+            <label for="education_highschool">High School</label>
+            <input type="radio" id="education_college" name="education" value="college">
+            <label for="education_college">College</label>
+            <input type="radio" id="education_graduate" name="education" value="graduate">
+            <label for="education_graduate">Graduate</label>
+
+            <label for="interests">Interests (check all that apply):</label>
+            <input type="checkbox" id="interest_sports" name="interests[]" value="sports">
+            <label for="interest_sports">Sports</label>
+            <input type="checkbox" id="interest_music" name="interests[]" value="music">
+            <label for="interest_music">Music</label>
+            <input type="checkbox" id="interest_movies" name="interests[]" value="movies">
+            <label for="interest_movies">Movies</label>
+
+            <label for="water_intake">Daily Water Intake (in milliliters):</label>
+            <input type="number" id="water_intake" name="water_intake">
+
+            <label for="ro_installed">Do you have a Reverse Osmosis (RO) system installed?</label>
+            <input type="radio" id="ro_installed_yes" name="ro_installed" value="yes">
+            <label for="ro_installed_yes">Yes</label>
+            <input type="radio" id="ro_installed_no" name="ro_installed" value="no">
+            <label for="ro_installed_no">No</label>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
